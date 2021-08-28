@@ -1,4 +1,4 @@
-import time
+from time import sleep
 import pyupbit
 import datetime
 import requests
@@ -82,8 +82,8 @@ while True:
                 sell_result = upbit.sell_market_order("KRW-DOT", dot*0.9995)
                 post_message(myToken, "#notification",
                              "DOT buy : " + str(sell_result))
-        time.sleep(1)
+        sleep(1)
     except Exception as e:
         print(e)
         post_message(myToken, "#notification", e)
-        time.sleep(1)
+        sleep(1)
