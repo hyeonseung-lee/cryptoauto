@@ -16,6 +16,6 @@ def get_ror(k=0.5):
     return ror
 
 
-for k in np.arange(0.1, 1.0, 0.1):
+for k in np.arange(0.1, 1.0, 0.05):
     ror = get_ror(k)
     print("%.2f %f" % (k, ror))

@@ -60,6 +60,8 @@ print("autotrade start")
 # 시작 메세지 슬랙 전송
 post_message(myToken, "#winney916_autocrypto", "autotrade start")
 
+k_value = 0.3
+
 while True:
     try:
         now = datetime.datetime.now()
@@ -67,7 +69,7 @@ while True:
         end_time = start_time + datetime.timedelta(days=1)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
-            target_price = get_target_price("KRW-DOT", 0.5)
+            target_price = get_target_price("KRW-DOT", k_value)
             ma15 = get_ma15("KRW-DOT")
             current_price = get_current_price("KRW-DOT")
             if target_price < current_price and ma15 < current_price:
